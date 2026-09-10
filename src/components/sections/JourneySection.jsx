@@ -2,7 +2,7 @@ import { journeySteps } from '../../data/jifiContent'
 
 function JourneySection() {
   return (
-    <section className="section-wrap reveal" data-reveal>
+    <section id="journey" className="section-wrap reveal" data-reveal>
       <div className="section-intro">
         <p className="eyebrow">Participant Pathway</p>
         <h3>An 8-step enterprise journey links inclusion to real economic progress.</h3>

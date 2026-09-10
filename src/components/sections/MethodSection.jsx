@@ -2,7 +2,7 @@ import { deliverSteps } from '../../data/jifiContent'
 
 function MethodSection() {
   return (
-    <section className="section-wrap method-panel reveal" data-reveal>
+    <section id="method" className="section-wrap method-panel reveal" data-reveal>
       <div className="section-intro">
         <p className="eyebrow">How JIFI Delivers</p>
         <h3>The DELIVERS framework makes execution repeatable and auditable.</h3>

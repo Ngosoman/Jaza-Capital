@@ -2,7 +2,7 @@ import { brand } from '../../data/jifiContent'
 
 function Footer() {
   return (
-    <footer className="site-footer reveal" data-reveal>
+    <footer id="contact" className="site-footer reveal" data-reveal>
       <p>
         {brand.name} by Jaza Capital | {brand.location}
       </p>
