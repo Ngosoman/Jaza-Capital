@@ -3,6 +3,7 @@ import { pillars } from '../../data/jifiContent'
 function PillarsSection() {
   return (
     <section id="pillars" className="section-wrap reveal" data-reveal>
+      <div id="finance" className="anchor-target" aria-hidden="true"></div>
       <div className="section-intro">
         <p className="eyebrow">Core Offer</p>
         <h3>Six pillars connect finance to resilient, inclusive livelihoods.</h3>

@@ -5,9 +5,9 @@ const navGroups = [
   {
     title: 'Jaza',
     links: [
-      { label: 'About', href: 'https://jazacapital.co.ke/' },
-      { label: 'Enterprise Finance', href: 'https://jazacapital.netlify.app/finance' },
-      { label: 'Reach & Evidence', href: 'https://jazacapital.netlify.app/reach' },
+      { label: 'About', href: '#about' },
+      { label: 'Enterprise Finance', href: '#finance' },
+      { label: 'Reach & Evidence', href: '#reach' },
     ],
   },
   {
@@ -56,8 +56,8 @@ function Header() {
           Menu
         </button>
 
-        <a className="ghost-btn desktop-only" href={brand.parentUrl} target="_blank" rel="noreferrer">
-          Visit Jaza Capital
+        <a className="ghost-btn desktop-only" href="#top" onClick={closeMenu}>
+          Home
         </a>
       </div>
 
@@ -71,13 +71,7 @@ function Header() {
             <p className="nav-title">{group.title}</p>
             <div className="nav-links">
               {group.links.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target={link.href.startsWith('http') ? '_blank' : undefined}
-                  rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
-                  onClick={closeMenu}
-                >
+                <a key={link.label} href={link.href} onClick={closeMenu}>
                   {link.label}
                 </a>
               ))}
@@ -85,8 +79,8 @@ function Header() {
           </section>
         ))}
 
-        <a className="ghost-btn mobile-only" href={brand.parentUrl} target="_blank" rel="noreferrer">
-          Visit Jaza Capital
+        <a className="ghost-btn mobile-only" href="#top" onClick={closeMenu}>
+          Home
         </a>
       </nav>
     </header>

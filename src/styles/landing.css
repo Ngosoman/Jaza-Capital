@@ -35,6 +35,19 @@ body {
   min-height: 100vh;
 }
 
+.hero-wrap,
+.section-wrap,
+.site-footer {
+  scroll-margin-top: 7rem;
+}
+
+.anchor-target {
+  display: block;
+  position: relative;
+  top: -5.8rem;
+  visibility: hidden;
+}
+
 a {
   color: inherit;
 }

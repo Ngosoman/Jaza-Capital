@@ -10,7 +10,7 @@ function HeroSection() {
   )
 
   return (
-    <section className="hero-wrap reveal" data-reveal>
+    <section id="about" className="hero-wrap reveal" data-reveal>
       <div className="hero-header-row">
         <p className="eyebrow">Kenya | Development Delivery Capability 2026</p>
         <div className="variant-switch" role="tablist" aria-label="Hero narrative variations">
@@ -51,7 +51,7 @@ function HeroSection() {
         </aside>
       </div>
 
-      <div className="metrics-grid">
+      <div id="reach" className="metrics-grid">
         {metrics.map((metric) => (
           <article key={metric.label}>
             <h2>{metric.value}</h2>
