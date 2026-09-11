@@ -2,7 +2,18 @@ import { useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { brand } from '../../data/jifiContent'
 
-const navGroups = [
+const primaryLinks = [
+  { label: 'Home', to: '/' },
+  { label: 'About', to: '/about' },
+  { label: 'Enterprise Finance', to: '/enterprise-finance' },
+  { label: 'Reach & Evidence', to: '/reach-evidence' },
+  { label: 'Why JIFI', to: '/jifi' },
+  { label: 'Capabilities', to: '/capabilities' },
+  { label: 'Outcomes', to: '/outcomes' },
+  { label: 'Contact', to: '/contact' },
+]
+
+const mobileGroups = [
   {
     title: 'Jaza',
     links: [
@@ -20,14 +31,13 @@ const navGroups = [
       { label: 'Delivery Method', to: '/delivery-method' },
       { label: 'Participant Pathway', to: '/participant-pathway' },
       { label: 'Outcomes', to: '/outcomes' },
-      { label: 'Evidence', to: '/evidence-assurance' },
-      { label: 'Partner with Us', to: '/partner' },
+      { label: 'Evidence Assurance', to: '/evidence-assurance' },
     ],
   },
   {
     title: 'Contact',
     links: [
-      { label: 'Contact', to: '/contact' },
+      { label: 'Contact Page', to: '/contact' },
       { label: 'Form', to: '/contact#contact-form', hashOnly: true },
       { label: 'Email', to: '/contact#contact-email', hashOnly: true },
       { label: 'Call', to: '/contact#contact-phone', hashOnly: true },
@@ -67,9 +77,15 @@ function Header() {
         >
           {isMenuOpen ? 'Close' : 'Menu'}
         </button>
-        <Link className="primary-btn nav-cta desktop-only" to="/partner" onClick={closeMenu}>
-          Partner with Us
-        </Link>
+
+        <div className="top-nav-actions desktop-only">
+          <Link className="ghost-btn" to="/contact" onClick={closeMenu}>
+            Contact
+          </Link>
+          <Link className="primary-btn nav-cta" to="/partner" onClick={closeMenu}>
+            Partner with Us
+          </Link>
+        </div>
       </div>
 
       <nav
@@ -77,37 +93,55 @@ function Header() {
         className={`site-nav ${isMenuOpen ? 'open' : ''}`}
         aria-label="Primary navigation"
       >
-        {navGroups.map((group) => (
-          <section key={group.title} className="nav-group">
-            <p className="nav-title">{group.title}</p>
-            <div className="nav-links">
-              {group.links.map((link) => (
-                link.hashOnly ? (
-                  <Link
-                    key={link.label}
-                    to={link.to}
-                    onClick={closeMenu}
-                    className={isHashRouteActive(link.to) ? 'active-link' : ''}
-                  >
-                    {link.label}
-                  </Link>
-                ) : (
-                  <NavLink
-                    key={link.label}
-                    to={link.to}
-                    onClick={closeMenu}
-                    className={({ isActive }) => (isActive ? 'active-link' : '')}
-                  >
-                    {link.label}
-                  </NavLink>
-                )
-              ))}
-            </div>
-          </section>
-        ))}
-        <Link className="primary-btn nav-cta mobile-only" to="/partner" onClick={closeMenu}>
-          Partner with Us
-        </Link>
+        <div className="desktop-nav desktop-only">
+          <div className="desktop-nav-primary">
+            {primaryLinks.map((link) => (
+              <NavLink
+                key={link.label}
+                to={link.to}
+                onClick={closeMenu}
+                className={({ isActive }) => `nav-pill ${isActive ? 'active-link' : ''}`}
+              >
+                {link.label}
+              </NavLink>
+            ))}
+          </div>
+        </div>
+
+        <div className="mobile-nav mobile-only">
+          {mobileGroups.map((group) => (
+            <section key={group.title} className="nav-group">
+              <p className="nav-title">{group.title}</p>
+              <div className="nav-links">
+                {group.links.map((link) => (
+                  link.hashOnly ? (
+                    <Link
+                      key={link.label}
+                      to={link.to}
+                      onClick={closeMenu}
+                      className={isHashRouteActive(link.to) ? 'active-link' : ''}
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <NavLink
+                      key={link.label}
+                      to={link.to}
+                      onClick={closeMenu}
+                      className={({ isActive }) => (isActive ? 'active-link' : '')}
+                    >
+                      {link.label}
+                    </NavLink>
+                  )
+                ))}
+              </div>
+            </section>
+          ))}
+
+          <Link className="primary-btn nav-cta" to="/partner" onClick={closeMenu}>
+            Partner with Us
+          </Link>
+        </div>
       </nav>
     </header>
   )
