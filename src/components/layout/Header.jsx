@@ -17,6 +17,8 @@ const navGroups = [
       { label: 'Capabilities', href: '#pillars' },
       { label: 'Delivery Method', href: '#method' },
       { label: 'Participant Pathway', href: '#journey' },
+      { label: 'Outcomes', href: '#outcomes' },
+      { label: 'Evidence', href: '#evidence' },
       { label: 'Partner with Us', href: '#commissioning' },
     ],
   },

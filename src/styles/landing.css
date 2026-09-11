@@ -446,6 +446,68 @@ h1 {
     #f8fbfa;
 }
 
+.outcomes-panel {
+  background:
+    linear-gradient(180deg, rgba(15, 124, 106, 0.07) 0%, rgba(255, 255, 255, 0.94) 100%),
+    #f9fbfa;
+}
+
+.outcomes-grid {
+  margin-top: 0.95rem;
+  display: grid;
+  gap: 0.72rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.outcomes-grid article {
+  border: 1px solid #d6e5e1;
+  border-radius: 0.95rem;
+  background: #fff;
+  padding: 0.92rem;
+}
+
+.outcomes-grid h4 {
+  margin: 0;
+}
+
+.outcomes-grid p {
+  margin: 0.5rem 0 0;
+  color: #495767;
+  line-height: 1.52;
+}
+
+.outcome-summary {
+  margin: 0.9rem 0 0;
+  color: #24504a;
+  font-weight: 700;
+}
+
+.evidence-panel {
+  background:
+    linear-gradient(180deg, rgba(187, 140, 52, 0.1) 0%, rgba(255, 255, 255, 0.95) 100%),
+    #fcf8f1;
+}
+
+.cycle-grid {
+  margin-top: 0.95rem;
+  display: grid;
+  gap: 0.72rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.cycle-grid article {
+  border: 1px solid #e5dacb;
+  border-radius: 0.95rem;
+  background: #fff;
+  padding: 0.9rem;
+}
+
+.cycle-grid p {
+  margin: 0.38rem 0 0;
+  color: #495767;
+  line-height: 1.5;
+}
+
 .county-list {
   margin-top: 0.75rem;
   display: flex;
@@ -734,7 +796,9 @@ h1 {
   .commission-grid,
   .deliver-flow,
   .contact-grid,
-  .flow-grid {
+  .flow-grid,
+  .outcomes-grid,
+  .cycle-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -796,7 +860,9 @@ h1 {
   .deliver-flow,
   .journey-strip,
   .contact-grid,
-  .flow-grid {
+  .flow-grid,
+  .outcomes-grid,
+  .cycle-grid {
     grid-template-columns: 1fr;
   }
 }

@@ -8,6 +8,8 @@ import PillarsSection from '../components/sections/PillarsSection'
 import MethodSection from '../components/sections/MethodSection'
 import JourneySection from '../components/sections/JourneySection'
 import CommissioningSection from '../components/sections/CommissioningSection'
+import OutcomesSection from '../components/sections/OutcomesSection'
+import EvidenceCycleSection from '../components/sections/EvidenceCycleSection'
 import ClosingCtaSection from '../components/sections/ClosingCtaSection'
 import ContactSection from '../components/sections/ContactSection'
 import { useScrollReveal } from '../hooks/useScrollReveal'
@@ -25,6 +27,8 @@ function LandingPage() {
       <PillarsSection />
       <MethodSection />
       <JourneySection />
+      <OutcomesSection />
+      <EvidenceCycleSection />
       <CommissioningSection />
       <ClosingCtaSection />
       <ContactSection />

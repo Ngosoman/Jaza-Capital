@@ -2,8 +2,7 @@ export const brand = {
   name: 'JIFI',
   fullName: 'Jaza Inclusive Finance Initiative',
   location: 'Nairobi, Kenya',
-  parentUrl: 'https://jazacapital.co.ke/',
-  logoUrl: 'https://jazacapital.co.ke/static/media/logo.fb61ebb30ac77b38835d.png',
+  logoUrl: '/media/jaza-logo.png',
   contactEmail: 'info@jazacapital.co.ke',
   contactPhone: '+254740934171',
 }
@@ -14,7 +13,7 @@ export const heroVariants = [
     label: 'Impact Narrative',
     title: 'Inclusive enterprise growth, engineered for measurable livelihoods impact.',
     copy: 'JIFI transforms a partner mandate into field-level delivery by combining catalytic finance, enterprise capability, market systems and evidence-led assurance in one coordinated platform.',
-    image: 'https://jazacapital.netlify.app/assets/media/jifi-community.webp',
+    image: '/media/jifi-community.webp',
     chips: ['Mandate to delivery', 'Evidence-backed outcomes', 'Last-mile implementation'],
   },
   {
@@ -22,7 +21,7 @@ export const heroVariants = [
     label: 'Market Narrative',
     title: 'Proximity is infrastructure when formal systems cannot see the enterprise reality.',
     copy: 'Built on Jaza field presence, JIFI links enterprise diagnosis, suitable finance, technical support and market participation so progress is practical, verifiable and scalable.',
-    image: 'https://jazacapital.netlify.app/assets/media/market-enterprise.webp',
+    image: '/media/market-enterprise.webp',
     chips: ['Field-led engagement', 'Suitable finance pathways', 'Scalable systems delivery'],
   },
 ]

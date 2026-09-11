@@ -7,7 +7,7 @@ function ClosingCtaSection() {
         Start with four strategic questions: desired change, target group barriers, capital and
         service mix, and evidence thresholds for adapt, scale or transition decisions.
       </p>
-      <a className="primary-btn" href="mailto:info@jazacapital.co.ke">
+      <a className="primary-btn" href="#contact">
         Partner with JIFI
       </a>
     </section>
