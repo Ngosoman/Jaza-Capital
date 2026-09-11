@@ -1,6 +1,9 @@
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import HeroSection from '../components/sections/HeroSection'
+import AboutSection from '../components/sections/AboutSection'
+import FinanceSection from '../components/sections/FinanceSection'
+import ReachSection from '../components/sections/ReachSection'
 import PillarsSection from '../components/sections/PillarsSection'
 import MethodSection from '../components/sections/MethodSection'
 import JourneySection from '../components/sections/JourneySection'
@@ -16,6 +19,9 @@ function LandingPage() {
     <main className="site-shell">
       <Header />
       <HeroSection />
+      <AboutSection />
+      <FinanceSection />
+      <ReachSection />
       <PillarsSection />
       <MethodSection />
       <JourneySection />
