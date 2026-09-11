@@ -6,6 +6,7 @@ const navGroups = [
   {
     title: 'Jaza',
     links: [
+      { label: 'Home', to: '/' },
       { label: 'About', to: '/about' },
       { label: 'Enterprise Finance', to: '/enterprise-finance' },
       { label: 'Reach & Evidence', to: '/reach-evidence' },
@@ -26,8 +27,8 @@ const navGroups = [
   {
     title: 'Contact',
     links: [
-      { label: 'Contact Page', to: '/contact' },
-      { label: 'Fill Form', to: '/contact#contact-form', hashOnly: true },
+      { label: 'Contact', to: '/contact' },
+      { label: 'Form', to: '/contact#contact-form', hashOnly: true },
       { label: 'Email', to: '/contact#contact-email', hashOnly: true },
       { label: 'Call', to: '/contact#contact-phone', hashOnly: true },
     ],
@@ -61,13 +62,13 @@ function Header() {
           className="menu-btn"
           aria-expanded={isMenuOpen}
           aria-controls="site-navigation"
+          aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           onClick={() => setIsMenuOpen((value) => !value)}
         >
-          Menu
+          {isMenuOpen ? 'Close' : 'Menu'}
         </button>
-
-        <Link className="ghost-btn desktop-only" to="/" onClick={closeMenu}>
-          Home
+        <Link className="primary-btn nav-cta desktop-only" to="/partner" onClick={closeMenu}>
+          Partner with Us
         </Link>
       </div>
 
@@ -104,9 +105,8 @@ function Header() {
             </div>
           </section>
         ))}
-
-        <Link className="ghost-btn mobile-only" to="/" onClick={closeMenu}>
-          Home
+        <Link className="primary-btn nav-cta mobile-only" to="/partner" onClick={closeMenu}>
+          Partner with Us
         </Link>
       </nav>
     </header>

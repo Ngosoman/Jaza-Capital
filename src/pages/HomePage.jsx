@@ -5,16 +5,18 @@ import FinanceSection from '../components/sections/FinanceSection'
 import ReachSection from '../components/sections/ReachSection'
 import HomeJifiBridgeSection from '../components/sections/HomeJifiBridgeSection'
 import HomeDecisionSection from '../components/sections/HomeDecisionSection'
+import HomeRhythmSection from '../components/sections/HomeRhythmSection'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 function HomePage() {
   useScrollReveal()
 
   return (
-    <>
+    <div className="home-flow">
       <HeroSection />
       <AboutSection />
       <FinanceSection />
+      <HomeRhythmSection />
       <ReachSection />
       <HomeJifiBridgeSection />
       <HomeDecisionSection />
@@ -32,7 +34,7 @@ function HomePage() {
           <Link to="/contact">Contact Us</Link>
         </div>
       </section>
-    </>
+    </div>
   )
 }
 
