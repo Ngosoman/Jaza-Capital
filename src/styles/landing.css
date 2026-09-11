@@ -46,6 +46,44 @@ svg {
   scroll-margin-top: 7rem;
 }
 
+.page-lead {
+  border: 1px solid #d8ccbd;
+  border-radius: 1.5rem;
+  background:
+    linear-gradient(130deg, rgba(15, 124, 106, 0.1) 0%, rgba(255, 255, 255, 0.94) 60%),
+    var(--bg-soft);
+  padding: clamp(1.2rem, 3vw, 2rem);
+  box-shadow: 0 14px 28px rgba(26, 38, 52, 0.06);
+}
+
+.quick-links {
+  background:
+    linear-gradient(180deg, rgba(187, 140, 52, 0.1) 0%, rgba(255, 255, 255, 0.9) 100%),
+    #fcf8f1;
+}
+
+.quick-links-grid {
+  margin-top: 0.95rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.72rem;
+}
+
+.quick-links-grid a {
+  text-decoration: none;
+  border: 1px solid #e5dacb;
+  border-radius: 0.95rem;
+  background: #fff;
+  padding: 0.85rem;
+  font-weight: 700;
+  color: #28445d;
+}
+
+.quick-links-grid a:hover {
+  border-color: #b8ddd6;
+  color: #0d6c5e;
+}
+
 a {
   color: inherit;
 }
@@ -664,6 +702,61 @@ h1 {
     #f8fbfa;
 }
 
+.form-panel {
+  background:
+    linear-gradient(180deg, rgba(15, 124, 106, 0.08) 0%, rgba(255, 255, 255, 0.95) 100%),
+    #f9fbfa;
+}
+
+.contact-form {
+  margin-top: 0.95rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #304558;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid #c9dfd9;
+  border-radius: 0.75rem;
+  padding: 0.72rem 0.78rem;
+  font: inherit;
+  color: #1f2f3f;
+  background: #ffffff;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: 2px solid #b8ddd6;
+  outline-offset: 1px;
+  border-color: #0f7c6a;
+}
+
+.contact-form .full-width {
+  grid-column: 1 / -1;
+}
+
+.contact-form .primary-btn {
+  justify-self: flex-start;
+}
+
+.form-success {
+  margin: 0.9rem 0 0;
+  color: #0d6c5e;
+  font-weight: 700;
+}
+
 .contact-grid {
   margin-top: 0.95rem;
   display: grid;
@@ -812,7 +905,9 @@ h1 {
   .contact-grid,
   .flow-grid,
   .outcomes-grid,
-  .cycle-grid {
+  .cycle-grid,
+  .quick-links-grid,
+  .contact-form {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -878,7 +973,13 @@ h1 {
   .contact-grid,
   .flow-grid,
   .outcomes-grid,
-  .cycle-grid {
+  .cycle-grid,
+  .quick-links-grid,
+  .contact-form {
     grid-template-columns: 1fr;
+  }
+
+  .contact-form .full-width {
+    grid-column: auto;
   }
 }

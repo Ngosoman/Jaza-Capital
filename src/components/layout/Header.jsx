@@ -1,42 +1,49 @@
 import { useState } from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { brand } from '../../data/jifiContent'
 
 const navGroups = [
   {
     title: 'Jaza',
     links: [
-      { label: 'About', href: '#about' },
-      { label: 'Enterprise Finance', href: '#finance' },
-      { label: 'Reach & Evidence', href: '#reach' },
+      { label: 'About', to: '/about' },
+      { label: 'Enterprise Finance', to: '/enterprise-finance' },
+      { label: 'Reach & Evidence', to: '/reach-evidence' },
     ],
   },
   {
     title: 'JIFI',
     links: [
-      { label: 'Why JIFI', href: '#top' },
-      { label: 'Capabilities', href: '#pillars' },
-      { label: 'Delivery Method', href: '#method' },
-      { label: 'Participant Pathway', href: '#journey' },
-      { label: 'Outcomes', href: '#outcomes' },
-      { label: 'Evidence', href: '#evidence' },
-      { label: 'Partner with Us', href: '#commissioning' },
+      { label: 'Why JIFI', to: '/jifi' },
+      { label: 'Capabilities', to: '/capabilities' },
+      { label: 'Delivery Method', to: '/delivery-method' },
+      { label: 'Participant Pathway', to: '/participant-pathway' },
+      { label: 'Outcomes', to: '/outcomes' },
+      { label: 'Evidence', to: '/evidence-assurance' },
+      { label: 'Partner with Us', to: '/partner' },
     ],
   },
   {
     title: 'Contact',
     links: [
-      { label: 'Contact Panel', href: '#contact' },
-      { label: 'Email', href: '#contact-email' },
-      { label: 'Call', href: '#contact-phone' },
-      { label: 'Nairobi HQ', href: '#contact-location' },
+      { label: 'Contact Page', to: '/contact' },
+      { label: 'Fill Form', to: '/contact#contact-form', hashOnly: true },
+      { label: 'Email', to: '/contact#contact-email', hashOnly: true },
+      { label: 'Call', to: '/contact#contact-phone', hashOnly: true },
     ],
   },
 ]
 
-function Header({ activeSection }) {
+function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const location = useLocation()
 
   const closeMenu = () => setIsMenuOpen(false)
+
+  const isHashRouteActive = (to) => {
+    const [path] = to.split('#')
+    return location.pathname === path
+  }
 
   return (
     <header id="top" className="top-nav reveal" data-reveal>
@@ -59,9 +66,9 @@ function Header({ activeSection }) {
           Menu
         </button>
 
-        <a className="ghost-btn desktop-only" href="#top" onClick={closeMenu}>
+        <Link className="ghost-btn desktop-only" to="/" onClick={closeMenu}>
           Home
-        </a>
+        </Link>
       </div>
 
       <nav
@@ -74,22 +81,33 @@ function Header({ activeSection }) {
             <p className="nav-title">{group.title}</p>
             <div className="nav-links">
               {group.links.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={closeMenu}
-                  className={link.href === `#${activeSection}` ? 'active-link' : ''}
-                >
-                  {link.label}
-                </a>
+                link.hashOnly ? (
+                  <Link
+                    key={link.label}
+                    to={link.to}
+                    onClick={closeMenu}
+                    className={isHashRouteActive(link.to) ? 'active-link' : ''}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <NavLink
+                    key={link.label}
+                    to={link.to}
+                    onClick={closeMenu}
+                    className={({ isActive }) => (isActive ? 'active-link' : '')}
+                  >
+                    {link.label}
+                  </NavLink>
+                )
               ))}
             </div>
           </section>
         ))}
 
-        <a className="ghost-btn mobile-only" href="#top" onClick={closeMenu}>
+        <Link className="ghost-btn mobile-only" to="/" onClick={closeMenu}>
           Home
-        </a>
+        </Link>
       </nav>
     </header>
   )
