@@ -33,7 +33,7 @@ const navGroups = [
   },
 ]
 
-function Header() {
+function Header({ activeSection }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const closeMenu = () => setIsMenuOpen(false)
@@ -74,7 +74,12 @@ function Header() {
             <p className="nav-title">{group.title}</p>
             <div className="nav-links">
               {group.links.map((link) => (
-                <a key={link.label} href={link.href} onClick={closeMenu}>
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={closeMenu}
+                  className={link.href === `#${activeSection}` ? 'active-link' : ''}
+                >
                   {link.label}
                 </a>
               ))}

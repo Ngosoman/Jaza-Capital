@@ -13,13 +13,15 @@ import EvidenceCycleSection from '../components/sections/EvidenceCycleSection'
 import ClosingCtaSection from '../components/sections/ClosingCtaSection'
 import ContactSection from '../components/sections/ContactSection'
 import { useScrollReveal } from '../hooks/useScrollReveal'
+import { useActiveSection } from '../hooks/useActiveSection'
 
 function LandingPage() {
   useScrollReveal()
+  const activeSection = useActiveSection()
 
   return (
     <main className="site-shell">
-      <Header />
+      <Header activeSection={activeSection} />
       <HeroSection />
       <AboutSection />
       <FinanceSection />
