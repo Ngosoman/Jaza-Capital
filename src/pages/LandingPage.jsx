@@ -6,6 +6,7 @@ import MethodSection from '../components/sections/MethodSection'
 import JourneySection from '../components/sections/JourneySection'
 import CommissioningSection from '../components/sections/CommissioningSection'
 import ClosingCtaSection from '../components/sections/ClosingCtaSection'
+import ContactSection from '../components/sections/ContactSection'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 function LandingPage() {
@@ -20,6 +21,7 @@ function LandingPage() {
       <JourneySection />
       <CommissioningSection />
       <ClosingCtaSection />
+      <ContactSection />
       <Footer />
     </main>
   )

@@ -23,9 +23,10 @@ const navGroups = [
   {
     title: 'Contact',
     links: [
-      { label: 'Email', href: `mailto:${brand.contactEmail}` },
-      { label: 'Call', href: `tel:${brand.contactPhone}` },
-      { label: 'Nairobi HQ', href: '#contact' },
+      { label: 'Contact Panel', href: '#contact' },
+      { label: 'Email', href: '#contact-email' },
+      { label: 'Call', href: '#contact-phone' },
+      { label: 'Nairobi HQ', href: '#contact-location' },
     ],
   },
 ]

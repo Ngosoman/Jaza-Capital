@@ -484,6 +484,56 @@ h1 {
     #fbf8f2;
 }
 
+.contact-panel {
+  background:
+    linear-gradient(180deg, rgba(15, 124, 106, 0.08) 0%, rgba(255, 255, 255, 0.94) 100%),
+    #f8fbfa;
+}
+
+.contact-grid {
+  margin-top: 0.95rem;
+  display: grid;
+  gap: 0.72rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.contact-grid article {
+  border: 1px solid #d6e5e1;
+  border-radius: 0.95rem;
+  background: #fff;
+  padding: 0.9rem;
+}
+
+.contact-label {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  color: #5f6e7f;
+  font-weight: 700;
+}
+
+.contact-grid h4 {
+  margin: 0.45rem 0 0.65rem;
+  font-size: 1.05rem;
+}
+
+.contact-note {
+  margin: 0;
+  color: #495767;
+  line-height: 1.5;
+}
+
+.copy-btn {
+  border: 1px solid #b7ddd6;
+  background: #eff9f6;
+  color: #0d6c5e;
+  border-radius: 999px;
+  padding: 0.42rem 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 .closing-banner {
   margin-top: 1.4rem;
   border: 1px solid #106f61;
@@ -529,7 +579,8 @@ h1 {
 .primary-btn:hover,
 .secondary-btn:hover,
 .variant-chip:hover,
-.menu-btn:hover {
+.menu-btn:hover,
+.copy-btn:hover {
   transform: translateY(-2px);
 }
 
@@ -558,7 +609,8 @@ h1 {
   .secondary-btn,
   .variant-chip,
   .menu-btn,
-  .nav-links a {
+  .nav-links a,
+  .copy-btn {
     transition: none;
   }
 }
@@ -582,7 +634,8 @@ h1 {
 
   .pillars-grid,
   .commission-grid,
-  .deliver-flow {
+  .deliver-flow,
+  .contact-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -638,7 +691,8 @@ h1 {
   .pillars-grid,
   .commission-grid,
   .deliver-flow,
-  .journey-strip {
+  .journey-strip,
+  .contact-grid {
     grid-template-columns: 1fr;
   }
 }
