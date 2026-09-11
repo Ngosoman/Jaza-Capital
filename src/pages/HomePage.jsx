@@ -1,5 +1,10 @@
 import { Link } from 'react-router-dom'
 import HeroSection from '../components/sections/HeroSection'
+import AboutSection from '../components/sections/AboutSection'
+import FinanceSection from '../components/sections/FinanceSection'
+import ReachSection from '../components/sections/ReachSection'
+import HomeJifiBridgeSection from '../components/sections/HomeJifiBridgeSection'
+import HomeDecisionSection from '../components/sections/HomeDecisionSection'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 function HomePage() {
@@ -8,10 +13,15 @@ function HomePage() {
   return (
     <>
       <HeroSection />
+      <AboutSection />
+      <FinanceSection />
+      <ReachSection />
+      <HomeJifiBridgeSection />
+      <HomeDecisionSection />
       <section className="section-wrap quick-links reveal" data-reveal>
         <div className="section-intro">
           <p className="eyebrow">Explore</p>
-          <h3>Choose a track and navigate page by page.</h3>
+          <h3>Independent pages for every track in the delivery story.</h3>
         </div>
         <div className="quick-links-grid">
           <Link to="/about">About Jaza + JIFI</Link>

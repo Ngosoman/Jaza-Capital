@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { heroVariants, metrics } from '../../data/jifiContent'
 
 function HeroSection() {
@@ -37,12 +38,12 @@ function HeroSection() {
             ))}
           </div>
           <div className="hero-actions">
-            <a className="primary-btn" href="#commissioning">
+            <Link className="primary-btn" to="/partner">
               Book a Design Session
-            </a>
-            <a className="secondary-btn" href="#pillars">
+            </Link>
+            <Link className="secondary-btn" to="/capabilities">
               Explore the 6 Pillars
-            </a>
+            </Link>
           </div>
         </div>
 
