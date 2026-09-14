@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { brand } from '../../data/jifiContent'
 
 const primaryLinks = [
@@ -13,58 +13,50 @@ const primaryLinks = [
   { label: 'Contact', to: '/contact' },
 ]
 
-const mobileGroups = [
-  {
-    title: 'Jaza',
-    links: [
-      { label: 'Home', to: '/' },
-      { label: 'About', to: '/about' },
-      { label: 'Enterprise Finance', to: '/enterprise-finance' },
-      { label: 'Reach & Evidence', to: '/reach-evidence' },
-    ],
-  },
-  {
-    title: 'JIFI',
-    links: [
-      { label: 'Why JIFI', to: '/jifi' },
-      { label: 'Capabilities', to: '/capabilities' },
-      { label: 'Delivery Method', to: '/delivery-method' },
-      { label: 'Participant Pathway', to: '/participant-pathway' },
-      { label: 'Outcomes', to: '/outcomes' },
-      { label: 'Evidence Assurance', to: '/evidence-assurance' },
-    ],
-  },
-  {
-    title: 'Contact',
-    links: [
-      { label: 'Contact Page', to: '/contact' },
-      { label: 'Form', to: '/contact#contact-form', hashOnly: true },
-      { label: 'Email', to: '/contact#contact-email', hashOnly: true },
-      { label: 'Call', to: '/contact#contact-phone', hashOnly: true },
-    ],
-  },
+const quickLinks = [
+  { label: 'Delivery Method', to: '/delivery-method' },
+  { label: 'Participant Pathway', to: '/participant-pathway' },
+  { label: 'Evidence Assurance', to: '/evidence-assurance' },
 ]
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const location = useLocation()
 
   const closeMenu = () => setIsMenuOpen(false)
-
-  const isHashRouteActive = (to) => {
-    const [path] = to.split('#')
-    return location.pathname === path
-  }
 
   return (
     <header id="top" className="top-nav reveal" data-reveal>
       <div className="top-nav-row">
-        <div className="brand">
+        <Link className="brand" to="/" onClick={closeMenu} aria-label="Jaza Capital home">
           <img className="brand-logo" src={brand.logoUrl} alt="Jaza Capital logo" loading="lazy" />
           <div>
             <p className="brand-name">{brand.name}</p>
-            <p className="brand-sub">{brand.fullName}</p>
+            <p className="brand-sub">Capital for proven outcomes</p>
           </div>
+        </Link>
+
+        <nav className="desktop-nav desktop-only" aria-label="Primary navigation">
+          <div className="desktop-nav-primary">
+            {primaryLinks.map((link) => (
+              <NavLink
+                key={link.label}
+                to={link.to}
+                onClick={closeMenu}
+                className={({ isActive }) => `nav-link ${isActive ? 'active-link' : ''}`}
+              >
+                {link.label}
+              </NavLink>
+            ))}
+          </div>
+        </nav>
+
+        <div className="top-nav-actions desktop-only">
+          <Link className="ghost-btn" to="/delivery-method" onClick={closeMenu}>
+            How It Works
+          </Link>
+          <Link className="primary-btn nav-cta" to="/partner" onClick={closeMenu}>
+            Partner with Us
+          </Link>
         </div>
 
         <button
@@ -77,70 +69,44 @@ function Header() {
         >
           {isMenuOpen ? 'Close' : 'Menu'}
         </button>
-
-        <div className="top-nav-actions desktop-only">
-          <Link className="ghost-btn" to="/contact" onClick={closeMenu}>
-            Contact
-          </Link>
-          <Link className="primary-btn nav-cta" to="/partner" onClick={closeMenu}>
-            Partner with Us
-          </Link>
-        </div>
       </div>
 
-      <nav
-        id="site-navigation"
-        className={`site-nav ${isMenuOpen ? 'open' : ''}`}
-        aria-label="Primary navigation"
-      >
-        <div className="desktop-nav desktop-only">
-          <div className="desktop-nav-primary">
+      <nav id="site-navigation" className={`site-nav ${isMenuOpen ? 'open' : ''}`} aria-label="Mobile navigation">
+        <div className="mobile-nav mobile-only">
+          <div className="mobile-nav-primary">
             {primaryLinks.map((link) => (
               <NavLink
                 key={link.label}
                 to={link.to}
                 onClick={closeMenu}
-                className={({ isActive }) => `nav-pill ${isActive ? 'active-link' : ''}`}
+                className={({ isActive }) => `mobile-link ${isActive ? 'active-link' : ''}`}
               >
                 {link.label}
               </NavLink>
             ))}
           </div>
-        </div>
 
-        <div className="mobile-nav mobile-only">
-          {mobileGroups.map((group) => (
-            <section key={group.title} className="nav-group">
-              <p className="nav-title">{group.title}</p>
-              <div className="nav-links">
-                {group.links.map((link) => (
-                  link.hashOnly ? (
-                    <Link
-                      key={link.label}
-                      to={link.to}
-                      onClick={closeMenu}
-                      className={isHashRouteActive(link.to) ? 'active-link' : ''}
-                    >
-                      {link.label}
-                    </Link>
-                  ) : (
-                    <NavLink
-                      key={link.label}
-                      to={link.to}
-                      onClick={closeMenu}
-                      className={({ isActive }) => (isActive ? 'active-link' : '')}
-                    >
-                      {link.label}
-                    </NavLink>
-                  )
-                ))}
-              </div>
-            </section>
-          ))}
+          <div className="mobile-nav-secondary">
+            {quickLinks.map((link) => (
+              <NavLink
+                key={link.label}
+                to={link.to}
+                onClick={closeMenu}
+                className={({ isActive }) => `mobile-chip ${isActive ? 'active-link' : ''}`}
+              >
+                {link.label}
+              </NavLink>
+            ))}
+          </div>
 
-          <Link className="primary-btn nav-cta" to="/partner" onClick={closeMenu}>
-            Partner with Us
-          </Link>
+          <div className="mobile-nav-actions">
+            <Link className="ghost-btn" to="/contact" onClick={closeMenu}>
+              Contact
+            </Link>
+            <Link className="primary-btn nav-cta" to="/partner" onClick={closeMenu}>
+              Partner with Us
+            </Link>
+          </div>
         </div>
       </nav>
     </header>
