@@ -100,9 +100,6 @@ function Header() {
           </div>
 
           <div className="mobile-nav-actions">
-            <Link className="ghost-btn" to="/contact" onClick={closeMenu}>
-              Contact
-            </Link>
             <Link className="primary-btn nav-cta" to="/partner" onClick={closeMenu}>
               Partner with Us
             </Link>
